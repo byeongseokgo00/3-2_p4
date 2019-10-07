@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>5wk-project</title>
+	<style type="text/css">
+		body{margin: 0;}
+		section{height: 800px; position: relative;}
+		img{width: 150px; position: absolute; top:45px;}
+		#t2{position: absolute; width: 500px;}
+		#t3{position: absolute; width: 600px;}
+		#t4{position: absolute; width: 480px;}
+		#t5{position: absolute; width: 750px; top:350px;}
+
+		.on{background: url(four.png); background-size: cover;}
+		.tw{background: green;}
+		.th{background: red;}
+		.fo{background: red;}
+		.fi{background: red;}
+		#monitor{position: fixed; background: red; width: 0px; height:00px; right: 0px; top:0px; color: black; z-index: 9999;}
+
+		@keyframes ro{	to{transform: rotate(360deg);}	}
+		@keyframes le{	from{left:0px;} to{left: 280px;} }
+		@keyframes ri{	from{right:0px;} to{right: 100px;} }
+		@keyframes tt{	from{top:100px; opacity: 0} to{top:200px; opacity: 1} }
+		@keyframes ttt{	from{top:100px; opacity: 0} to{top:250px; opacity: 1} }
+		@keyframes tttt{ from{top:100px; opacity: 0} to{top:240px; opacity: 1} }
+		@keyframes ttttt{ from{top:100px; opacity: 0} to{top:450px; opacity: 1} }				
+		@keyframes to{ from{bottom:0px;} to{top:300px;} }
+		@keyframes bo{ from{top:0px;} to{bottom:250px;} }
+
+
+		.text{width: 330px; font-style: 0.9em; line-height: 1.5;
+			color:black; position: absolute; opacity: 0;}
+
+		#txt1 { left:500px; top:100px; }
+		#txt2 { left:750px; top:500px; }
+		#txt3 { right:900px; top:50px; color:white;}
+		#txt4 { left:750px; top:100px; }
+		#txt5 { left:730px; top:100px; color:white;}
+
+		#bb{ background: white; background-size: cover; background-attachment: fixed;}
+		#cc{ background: black; background-size: cover; background-attachment: fixed;}
+		#dd{ background: white; background-size: cover; background-attachment: scroll;}
+		#ee{ background: url(five.jpg); background-size: cover; background-attachment: scroll;}
+	</style>
+
+</head>
+<body>
+	<section class="on">
+		<div class="text" id="txt1">
+		</div>
+	</section>
+	<section class="tw" id="bb">
+		<img src="two.jpg" id="t2">
+		<div class="text" id="txt2">
+			구석구석 자신에 맞게 꾸미는 시계 페이스. 어느 시계 페이스든, 원하는 앱이나 특정 기능을 바로 쓸 수 있게 해주는 컴플리케이션을 골라 필요에 따라 구성할 수 있습니다.<br><br>덕분에 한눈에 더 많은 정보를 확인하고, 터치 한 번에 더 많은 일을 할 수 있죠. 가능성은 수백 가지. 게다가 ‘인포그래프’와 같은 페이스에는 컴플리케이션을 무려 아홉 개까지 띄울 수 있습니다.
+		</div>
+	</section>
+	<section class="th" id="cc">
+		<img src="three.png" id="t3">
+		<div class="text" id="txt3">
+			상시표시형 Retina 디스플레이. 시계 페이스에 담긴 시간 또는 그 밖의 정보를 보기 위해, 더 이상 손목을 들어 올리거나 화면을 터치할 필요가 없습니다.<br><br> 디스플레이가 절대 잠들지 않으니까요. 덕분에 자전거를 타고 있을 때도, 복근 운동으로 열심히 땀을 빼는 중에도, 혹은 회의 중에 시간이 얼마나 흘렀는지를 알고 싶을 때도, 흘깃 보는 것만으로 필요한 수치를 바로 확인할 수 있습니다. 
+		</div>		
+	</section>
+	<section class="fo" id="dd">
+		<img src="airpod.png" id="t4">
+		<div class="text" id="txt4">
+			방대한 Apple Music 라이브러리, 그리고 애청 팟캐스트를 맘껏 즐길 수 있습니다 
+		</div>		
+	</section>
+	<section class="fi" id="ee">
+		<img src="dk.png" id="t5">
+		<div class="text" id="txt5">
+			추가 기능으로, 새로운 다크 모드는 장치의 배터리 수명을 최소한으로 연장 할 수 있습니다. 최신 iPhone의 OLED 화면은 검정을 표시하는 데 전력을 사용하지 않으므로 어두운 모드를 선택하면 이론적으로 배터리 소비가 줄어 듭니다. 이는 iOS 13의 성능을 개선하려는 Apple의 전반적인 목표와 일치합니다.<br><br>이제 애플워치5로도 다크모드를 즐길 수 있습니다.
+		</div>		
+	</section>
+
+	<div id="monitor"></div>
+
+	<script type="text/javascript">
+	window.onscroll = function(){
+		var t = document.documentElement.scrollTop + document.body.scrollTop;
+		monitor.innerHTML = t;
+
+		if(t > 80){
+			t2.style.animation = "le 1s forwards";
+			txt2.style.animation = "tt 1s forwards";
+		}else{
+			t2.style.animation = "";
+			txt2.style.animation = "";
+		}
+
+		if(t > 800){
+			t3.style.animation = "ri 2s forwards";
+			txt3.style.animation = "ttt 1.5s forwards";
+		}else{
+			t3.style.animation = "";
+			txt3.style.animation = "";
+		}
+
+		if(t > 1800){
+			t4.style.animation = "le 1s forwards";
+			txt4.style.animation = "tttt 1s forwards";
+		}else{
+			t4.style.animation = "";
+			txt4.style.animation = "";
+		}	
+
+		if(t > 2500){
+			t5.style.animation = "ro 1.8s forwards";
+			txt5.style.animation = "ttttt 2.4s forwards";
+		}else{
+			t5.style.animation = "";
+			txt5.style.animation = "";
+		}					
+//		t2.style.animation = "ro 1s infinite";
+		
+//		if(t > 200){txt2.style.left = "300px";}
+	}
+	</script>
+
+</body>
+</html>
